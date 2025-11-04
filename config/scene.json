@@ -1,0 +1,497 @@
+{
+  "palette": {
+    "primary": "#E91E63",
+    "secondary": "#FFE0B2",
+    "accent": "#C2185B",
+    "background": "#FAFAFA",
+    "surface": "#FFFFFF",
+    "text": "#212121",
+    "text_secondary": "#757575",
+    "success": "#C5E1A5",
+    "info": "#1A237E",
+    "warning": "#f59e0b",
+    "error": "#ef4444",
+    "border": "#E5E7EB",
+    "pink_rose": "#E91E63",
+    "warm_peach": "#FFE0B2",
+    "deep_rose": "#C2185B",
+    "sage_green": "#C5E1A5",
+    "navy_blue": "#1A237E"
+  },
+  "fonts": {
+    "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "display": "Playfair Display, serif",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+  },
+  "css_variables": {
+    "primary_color": "var(--primary-color)",
+    "secondary_color": "var(--secondary-color)",
+    "background_color": "var(--background-color)",
+    "surface_color": "var(--surface-color)",
+    "text_color": "var(--text-color)",
+    "text_secondary": "var(--text-secondary)",
+    "accent_color": "var(--accent-color)",
+    "success_color": "var(--success-color)",
+    "border_color": "var(--border-color)",
+    "border_radius": "12px",
+    "animation_duration": "0.3s",
+    "focus_shadow": "rgba(233, 30, 99, 0.1)"
+  },
+  "dark_css_variables": {
+    "primary_color": "var(--primary-color)",
+    "secondary_color": "var(--secondary-color)",
+    "background_color": "var(--background-color)",
+    "surface_color": "var(--surface-color)",
+    "text_color": "var(--text-color)",
+    "text_secondary": "var(--text-secondary)",
+    "accent_color": "var(--accent-color)",
+    "success_color": "var(--success-color)",
+    "border_color": "var(--border-color)",
+    "focus_shadow": "rgba(232, 160, 184, 0.2)"
+  },
+  "dark": {
+    "palette": {
+      "primary": "#E8A0B8",
+      "secondary": "#D485A3",
+      "accent": "#374151",
+      "background": "#111827",
+      "surface": "#1F2937",
+      "text": "#F9FAFB",
+      "text_secondary": "#D1D5DB",
+      "success": "#6EE7B7",
+      "info": "#8B5CF6",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "border": "#374151",
+      "slate_gray": "#9CA3AF",
+      "rose_quartz": "#E8A0B8",
+      "mint_fresh": "#6EE7B7",
+      "lavender_mist": "#8B5CF6",
+      "peach_glow": "#F59E0B"
+    },
+    "status": {
+      "positive": "#6EE7B7",
+      "warning": "#F59E0B",
+      "negative": "#EF4444",
+      "info": "#8B5CF6",
+      "error_classes": "text-sm p-3 rounded-lg w-full"
+    },
+    "shadows": {
+      "soft": "0 2px 8px rgba(0, 0, 0, 0.3)",
+      "bubble": "0 2px 8px rgba(0, 0, 0, 0.2)",
+      "bubble_user": "0 4px 16px rgba(232, 160, 184, 0.3)",
+      "header": "0 4px 20px rgba(0, 0, 0, 0.4)",
+      "footer": "0 -2px 8px rgba(0, 0, 0, 0.3)",
+      "logo": "0 2px 8px rgba(0, 0, 0, 0.4)",
+      "card": "0 4px 12px rgba(0, 0, 0, 0.3)",
+      "input": "0 2px 8px rgba(0, 0, 0, 0.2)",
+      "button": "0 4px 16px rgba(232, 160, 184, 0.4)"
+    },
+    "glass_effects": {
+      "backdrop_blur": "backdrop-filter: blur(12px)",
+      "backdrop_blur_light": "backdrop-filter: blur(8px)",
+      "backdrop_blur_strong": "backdrop-filter: blur(16px)",
+      "glass_bg_primary": "rgba(31, 41, 55, 0.8)",
+      "glass_bg_secondary": "rgba(17, 24, 39, 0.6)",
+      "glass_bg_surface": "rgba(31, 41, 55, 0.9)",
+      "glass_border": "rgba(55, 65, 81, 0.3)",
+      "glass_border_light": "rgba(55, 65, 81, 0.2)",
+      "glass_border_strong": "rgba(55, 65, 81, 0.4)"
+    }
+  },
+  "status": {
+    "positive": "#C5E1A5",
+    "warning": "#FED7C8",
+    "negative": "#FCA5A5",
+    "info": "#DDD6FE",
+    "error_classes": "text-sm p-3 rounded-lg w-full"
+  },
+  "shadows": {
+    "soft": "0 2px 8px rgba(100, 116, 139, 0.06)",
+    "bubble": "0 2px 8px rgba(0, 0, 0, 0.06)",
+    "bubble_user": "0 4px 12px rgba(233, 30, 99, 0.1)",
+    "header": "0 4px 16px rgba(0, 0, 0, 0.04)",
+    "footer": "0 -4px 16px rgba(0, 0, 0, 0.04)",
+    "logo": "0 2px 8px rgba(100, 116, 139, 0.15)",
+    "card": "0 4px 12px rgba(233, 30, 99, 0.08)",
+    "input": "0 2px 8px rgba(0, 0, 0, 0.04)",
+    "button": "0 4px 16px rgba(244, 184, 197, 0.4)",
+    "welcome_card": "0 4px 12px rgba(233, 30, 99, 0.08)"
+  },
+  "glass_effects": {
+    "backdrop_blur": "backdrop-filter: blur(16px) saturate(180%)",
+    "backdrop_blur_light": "backdrop-filter: blur(8px)",
+    "backdrop_blur_strong": "backdrop-filter: blur(16px)",
+    "glass_bg_primary": "rgba(255, 255, 255, 0.8)",
+    "glass_bg_secondary": "rgba(255, 255, 255, 0.15)",
+    "glass_bg_surface": "rgba(255, 255, 255, 0.35)",
+    "glass_border": "rgba(229, 231, 235, 0.8)",
+    "glass_border_light": "rgba(255, 255, 255, 0.15)",
+    "glass_border_strong": "rgba(255, 255, 255, 0.30)"
+  },
+  "background": {
+    "gradient": "linear-gradient(135deg, #E1BEE7 0%, #FCE4EC 30%, #FAFAFA 60%, #E1BEE7 100%)",
+    "gradient_size": "800% 800%",
+    "animation_name": "gradient-animation",
+    "animation_duration": "30s"
+  },
+  "floating_blobs": {
+    "blob_1": {
+      "position": "fixed",
+      "top": "5rem",
+      "right": "-200px",
+      "width": "800px",
+      "height": "800px",
+      "background": "linear-gradient(to bottom right, #fbcfe8, #fda4af, #fecdd3)",
+      "opacity": "0.4",
+      "blur": "96px",
+      "animation": "float 20s ease-in-out infinite"
+    },
+    "blob_2": {
+      "position": "fixed",
+      "bottom": "-200px",
+      "left": "-200px",
+      "width": "600px",
+      "height": "600px",
+      "background": "linear-gradient(to top right, #fda4af, #fbcfe8, #fda4af)",
+      "opacity": "0.4",
+      "blur": "96px",
+      "animation": "float-delayed 25s ease-in-out infinite"
+    }
+  },
+  "layout": {
+    "content_max_width": "max-w-6xl",
+    "page_padding": "p-2 sm:p-4",
+    "header_height": "h-16 sm:h-20",
+    "footer_height": "h-14 sm:h-16",
+    "page_classes": "flex min-h-screen bg-gradient-to-br from-slate-50 to-pink-50",
+    "content_classes": "w-full",
+    "scroll_area_classes": "flex-grow w-full overflow-y-auto",
+    "container_wrapper": "w-full max-w-4xl mx-auto px-2 sm:px-4",
+    "root_classes": "min-h-screen bg-gradient-to-br from-slate-50 to-pink-50 w-full",
+    "chat_container_max_width": "900px",
+    "chat_padding_top": "6rem",
+    "chat_padding_bottom": "8rem",
+    "chat_padding_x": "1.5rem"
+  },
+  "body": {
+    "classes": "min-h-screen text-slate-700 font-inter transition-colors duration-300",
+    "overflow_x": "hidden",
+    "max_width": "100vw"
+  },
+  "header_styles": {
+    "classes": "w-full p-6 bg-gradient-to-br from-rose-200 to-pink-300 shadow-lg transition-all duration-300 items-center justify-between"
+  },
+  "header_logo": {
+    "classes": "h-8 sm:h-10 md:h-12 lg:h-16 w-auto max-w-[120px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-[250px] object-contain flex-shrink-0"
+  },
+  "header_logo_mobile": {
+    "classes": "h-12 max-w-[200px]"
+  },
+  "header_logo_mobile_small": {
+    "classes": "h-10 max-w-[150px]"
+  },
+  "header_tagline": {
+    "classes": "block"
+  },
+  "header_tagline_mobile": {
+    "classes": "hidden"
+  },
+  "header": {
+    "position": "fixed",
+    "classes": "w-full items-center justify-between transition-all duration-300",
+    "background": "rgba(255, 255, 255, 0.8)",
+    "backdrop_filter": "blur(16px) saturate(180%)",
+    "border": "1px solid rgba(229, 231, 235, 0.8)",
+    "border_radius": "0 0 1rem 1rem",
+    "shadow": "0 4px 16px rgba(0, 0, 0, 0.04)",
+    "z_index": "50",
+    "scroll_effect": "backdrop-blur-lg bg-white/35 border-b border-white/30 shadow-lg transition-all duration-300",
+    "fixed_classes": "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+    "row_classes": "w-full flex-wrap items-center justify-between px-3 py-2 sm:px-4 sm:py-3 max-w-4xl mx-auto",
+    "logo_row_classes": "items-center gap-4",
+    "tagline": "Your journey, together",
+    "tagline_classes": "text-sm gt-xs",
+    "tagline_color": "#757575",
+    "tagline_font_weight": "300",
+    "theme_btn_props": "flat dense color=white",
+    "theme_btn_classes": "flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10",
+    "max_width": "1800px",
+    "padding": "0.75rem 2rem",
+    "hipaa_badge": {
+      "enabled": true,
+      "text": "HIPAA Compliant",
+      "background": "linear-gradient(to right, #FCE4EC, #fda4af)",
+      "border": "1px solid #FBCFE8",
+      "color": "#BE185D",
+      "font_size": "0.75rem",
+      "font_weight": "500",
+      "padding": "0.25rem 1rem",
+      "border_radius": "9999px"
+    }
+  },
+  "footer": {
+    "position": "fixed",
+    "classes": "w-full items-center transition-all duration-300",
+    "background": "rgba(255, 255, 255, 0.8)",
+    "backdrop_filter": "blur(16px) saturate(180%)",
+    "border": "1px solid rgba(229, 231, 235, 0.8)",
+    "border_radius": "1rem 1rem 0 0",
+    "shadow": "0 -4px 16px rgba(0, 0, 0, 0.04)",
+    "z_index": "50",
+    "scroll_effect": "backdrop-blur-lg bg-white/35 border-t border-white/30 shadow-xl transition-all duration-300",
+    "fixed_classes": "fixed bottom-0 left-0 right-0 z-40 transition-all duration-300",
+    "row_classes": "w-full max-w-4xl mx-auto px-3 py-3 sm:px-6 sm:py-4 items-center gap-2 sm:gap-3 flex-col sm:flex-row",
+    "new_btn_props": "round flat",
+    "new_btn_classes": "hover:scale-105 transition-all duration-300 backdrop-blur-sm flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12",
+    "new_btn_tooltip": "New conversation",
+    "new_btn_gradient": "linear-gradient(to right, lab(56.9303 76.8162 -8.07021) 0%, lab(56.101 79.4328 31.4532) 100%)",
+    "new_btn_size": "3rem",
+    "input_classes": "flex-grow backdrop-blur-sm mx-2 sm:mx-0",
+    "input_props": "borderless dense",
+    "input_placeholder": "Share what's on your mind...",
+    "input_tooltip": "Type your message here",
+    "input_background": "#f3f4f6",
+    "input_border": "1px solid #d1d5db",
+    "input_border_radius": "9999px",
+    "input_padding": "0.5rem 1rem",
+    "input_min_height": "3rem",
+    "send_btn_props": "round color=primary",
+    "send_btn_classes": "transition-all duration-300",
+    "send_btn_tooltip": "Send message",
+    "send_btn_gradient": "linear-gradient(to right, #ec4899, #f43f5e)",
+    "send_btn_size": "3rem",
+    "max_width": "1800px",
+    "padding": "1.5rem",
+    "container_max_width": "900px"
+  },
+  "logo": {
+    "src": "/branding/logo-full-white.svg",
+    "alt": "MammoChat™",
+    "classes": "h-10 flex-shrink-0 transition-transform duration-200 hover:scale-105",
+    "drop_shadow": "drop-shadow-sm",
+    "svg_width": "250",
+    "svg_height": "64",
+    "gradient": "linear-gradient(to right, #EC4899, #F43F5E)"
+  },
+  "chat": {
+    "welcome_message": "Welcome to MammoChat™ 💗\n\nI'm here to support you on your breast cancer journey. I can help you find clinical trials that match your situation, connect with communities of patients with similar experiences, understand information about treatments and options, and navigate your healthcare with confidence.\n\nHow can I support you today?",
+    "welcome_accordion": {
+      "enabled": true,
+      "default_expanded": true,
+      "chevron_up_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"color: #EC4899; transition: transform 0.3s ease;\"><polyline points=\"18 15 12 9 6 15\"></polyline></svg>",
+      "chevron_down_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"color: #EC4899; transition: transform 0.3s ease;\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>",
+      "button_style": "background: transparent; transition: transform 0.2s ease; padding: 0.5rem; min-width: 2.5rem; min-height: 2.5rem;"
+    },
+    "welcome_card": {
+      "background": "white",
+      "border_radius": "1.5rem",
+      "padding": "2.5rem",
+      "border": "1px solid #FBCFE8",
+      "shadow": "0 4px 12px rgba(233, 30, 99, 0.08)",
+      "width": "100%"
+    },
+    "welcome_icon": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" fill=\"none\"><defs><mask id=\"welcome-chat-mask\"><path d=\"M48 16C48 11.5817 44.4183 8 40 8H16C11.5817 8 8 11.5817 8 16V36C8 40.4183 11.5817 44 16 44H20V52L28 44H40C44.4183 44 48 40.4183 48 36V16Z\" fill=\"white\"></path><path d=\"M28 20C28 16.6863 30.6863 14 34 14C35.6569 14 37.1569 14.6716 38.2426 15.7574C39.3284 14.6716 40.8284 14 42.4853 14C45.799 14 48.4853 16.6863 48.4853 20C48.4853 21.3062 48.0615 22.512 47.3431 23.4853L38.2426 32.5858L29.1421 23.4853C28.4237 22.512 28 21.3062 28 20Z\" fill=\"black\"></path></mask><linearGradient id=\"welcome-gradient\" x1=\"8\" y1=\"30\" x2=\"48\" y2=\"30\" gradientUnits=\"userSpaceOnUse\"><stop offset=\"0%\" stop-color=\"#EC4899\"></stop><stop offset=\"100%\" stop-color=\"#F43F5E\"></stop></linearGradient></defs><path d=\"M48 16C48 11.5817 44.4183 8 40 8H16C11.5817 8 8 11.5817 8 16V36C8 40.4183 11.5817 44 16 44H20V52L28 44H40C44.4183 44 48 40.4183 48 36V16Z\" fill=\"url(#welcome-gradient)\" mask=\"url(#welcome-chat-mask)\"></path></svg>"
+    },
+    "welcome_title": {
+      "text": "Welcome to MammoChat™",
+      "gradient_class": "gradient-text",
+      "font_size": "1.75rem",
+      "font_weight": "400"
+    },
+    "welcome_content": {
+      "color": "#212121",
+      "font_weight": "300",
+      "line_height": "1.8",
+      "font_size": "1rem"
+    },
+    "container_classes": "w-full max-w-4xl mx-auto gap-6",
+    "scroll_area_classes": "flex-grow w-full p-4",
+    "message_bubble": {
+      "classes": "rounded-2xl p-5 max-w-[70%] animate-[slideIn_0.3s_ease-out] shadow-md leading-relaxed transition-all duration-300",
+      "padding": "1.25rem 1.75rem",
+      "max_width": "75%",
+      "animation_class": "message-enter"
+    },
+    "user_message": {
+      "background": "linear-gradient(to right, lab(56.9303 76.8162 -8.07021) 0%, lab(56.101 79.4328 31.4532) 100%)",
+      "border": "1px solid #FBCFE8",
+      "border_radius": "1.5rem 0.25rem 1.5rem 1.5rem",
+      "color": "#ffffff",
+      "font_weight": "300",
+      "line_height": "1.7",
+      "font_size": "1rem",
+      "shadow": "0 4px 12px rgba(233, 30, 99, 0.1)",
+      "classes": "ml-auto text-white border-none"
+    },
+    "assistant_message": {
+      "background": "white",
+      "border": "1px solid rgba(255, 255, 255, 0.3)",
+      "border_radius": "0.25rem 1.5rem 1.5rem 1.5rem",
+      "color": "#212121",
+      "font_weight": "300",
+      "line_height": "1.7",
+      "font_size": "1rem",
+      "shadow": "0 4px 12px rgba(233, 30, 99, 0.2)",
+      "classes": "bg-white border border-slate-200 text-slate-700"
+    },
+    "assistant_avatar": {
+      "size": "2rem",
+      "margin-right": "4px",
+      "background": "linear-gradient(to bottom right, #ec4899, #f43f5e)",
+      "border_radius": "9999px",
+      "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"color: white;\"><path d=\"M12 8V4H8\"></path><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"></rect><path d=\"M2 14h2\"></path><path d=\"M20 14h2\"></path><path d=\"M15 13v2\"></path><path d=\"M9 13v2\"></path></svg>"
+    },
+    "typing_indicator": {
+      "background": "white",
+      "border": "1px solid rgba(255, 255, 255, 0.3)",
+      "border_radius": "0.25rem 1.5rem 1.5rem 1.5rem",
+      "padding": "1.25rem 1.75rem",
+      "max_width": "75%",
+      "spinner_color": "#EC4899",
+      "text_color": "#212121",
+      "text": "Thinking..."
+    },
+    "user_message_props": "bg-color=primary text-color=white",
+    "user_message_classes": "shadow-sm",
+    "user_row_classes": "w-full justify-end",
+    "assistant_message_props": "bg-color=accent text-color=grey-8",
+    "assistant_message_classes": "shadow-sm",
+    "assistant_row_classes": "w-full justify-start",
+    "assistant_row_gap": "4px",
+    "welcome_message_props": "bg-color=accent text-color=grey-8",
+    "welcome_message_classes": "shadow-sm"
+  },
+  "animations": {
+    "glass_transition": "transition: backdrop-filter 0.3s ease, opacity 0.3s ease, background-color 0.3s ease",
+    "fade_in_glass": "animation: fadeInGlass 0.5s ease-out forwards",
+    "hover_glass": "transition: backdrop-filter 0.2s ease, transform 0.2s ease",
+    "focus_glass": "transition: backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
+    "gradient_animation": {
+      "name": "gradient-animation",
+      "duration": "30s",
+      "timing": "ease",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": "background-position: 0% 50%",
+        "50%": "background-position: 100% 50%",
+        "100%": "background-position: 0% 50%"
+      }
+    },
+    "float": {
+      "name": "float",
+      "duration": "20s",
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": "transform: translate(0, 0) scale(1)",
+        "33%": "transform: translate(30px, -30px) scale(1.1)",
+        "66%": "transform: translate(-20px, 20px) scale(0.9)",
+        "100%": "transform: translate(0, 0) scale(1)"
+      }
+    },
+    "float_delayed": {
+      "name": "float-delayed",
+      "duration": "25s",
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": "transform: translate(0, 0) scale(1)",
+        "33%": "transform: translate(-30px, 30px) scale(1.05)",
+        "66%": "transform: translate(20px, -20px) scale(0.95)",
+        "100%": "transform: translate(0, 0) scale(1)"
+      }
+    },
+    "fadeIn": {
+      "from": "opacity: 0",
+      "to": "opacity: 1"
+    },
+    "slideUp": {
+      "from": "transform: translateY(20px); opacity: 0",
+      "to": "transform: translateY(0); opacity: 1"
+    },
+    "gradient_text": {
+      "name": "gradient-shift",
+      "duration": "3s",
+      "timing": "ease",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": "background-position: 0% center",
+        "50%": "background-position: 100% center",
+        "100%": "background-position: 0% center"
+      }
+    }
+  },
+  "opacity_scale": {
+    "glass_light": 0.15,
+    "glass_medium": 0.25,
+    "glass_strong": 0.35,
+    "glass_max": 0.45,
+    "border_light": 0.15,
+    "border_medium": 0.2,
+    "border_strong": 0.3
+  },
+  "input_container": {
+    "classes": "bg-white rounded-2xl p-4 border-2 border-slate-200 transition-all duration-300 shadow-md"
+  },
+  "input_container_focus": {
+    "classes": "border-rose-300 shadow-[0_0_0_3px_rgba(244,184,197,0.1)]"
+  },
+  "btn_send": {
+    "classes": "bg-gradient-to-br from-rose-200 to-pink-300 border-none rounded-full w-12 h-12 flex items-center justify-center cursor-pointer transition-all duration-300 text-white",
+    "gradient": "linear-gradient(to right, #ec4899, #f43f5e)",
+    "size": "3rem",
+    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"color: white;\"><line x1=\"22\" y1=\"2\" x2=\"11\" y2=\"13\"></line><polygon points=\"22 2 15 22 11 13 2 9 22 2\"></polygon></svg>"
+  },
+  "btn_send_hover": {
+    "classes": "scale-105 shadow-xl",
+    "shadow": "0 10px 30px rgba(236, 72, 153, 0.3)"
+  },
+  "btn_send_active": {
+    "classes": "scale-95"
+  },
+  "btn_secondary": {
+    "classes": "bg-white border border-slate-200 text-slate-700 transition-all duration-300"
+  },
+  "btn_secondary_hover": {
+    "classes": "bg-rose-200 text-white border-rose-200"
+  },
+  "typing_indicator": {
+    "classes": "flex gap-2 p-4 items-center"
+  },
+  "typing_dot": {
+    "classes": "w-2 h-2 rounded-full bg-rose-200 animate-[typing_1.4s_infinite]"
+  },
+  "keyframes_slideIn": {
+    "from": "opacity: 0; transform: translateY(10px);",
+    "to": "opacity: 1; transform: translateY(0);"
+  },
+  "keyframes_typing": {
+    "0%, 60%, 100%": "transform: translateY(0); opacity: 0.7;",
+    "30%": "transform: translateY(-8px); opacity: 1;"
+  },
+  "dark_mode_styles": {
+    "header_classes": "shadow-2xl",
+    "message_bubble_classes": "shadow-lg",
+    "input_container_classes": "shadow-md",
+    "btn_send_hover_classes": "shadow-2xl",
+    "footer_classes": "bg-slate-800 border-slate-700"
+  },
+  "gradients": {
+    "primary": "linear-gradient(to right, #ec4899, #f43f5e, #ec4899, #f43f5e)",
+    "text": "linear-gradient(to right, #E91E63, #ec4899, #E91E63)",
+    "background": "linear-gradient(135deg, #E1BEE7 0%, #FCE4EC 30%, #FAFAFA 60%, #E1BEE7 100%)",
+    "button": "linear-gradient(to right, #ec4899, #f43f5e)",
+    "avatar": "linear-gradient(to bottom right, #ec4899, #f43f5e)",
+    "hipaa_badge": "linear-gradient(to right, #FCE4EC, #fda4af)",
+    "logo_brand": "linear-gradient(to right, #EC4899, #F43F5E)"
+  },
+  "scrollbar": {
+    "width": "8px",
+    "track_bg": "#f1f1f1",
+    "thumb_bg": "#E91E63",
+    "thumb_hover_bg": "#C2185B",
+    "border_radius": "4px"
+  }
+}
