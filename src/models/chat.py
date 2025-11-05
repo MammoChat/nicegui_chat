@@ -2,12 +2,19 @@
 
 from __future__ import annotations
 
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Any
 from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field
+
+# Python 3.11+ compatibility - use UTC if available, fallback to timezone.utc
+try:
+    UTC = timezone.utc
+except AttributeError:
+    # Fallback for Python < 3.11
+    from datetime import timezone as UTC
 
 
 class MessageRole(str, Enum):
