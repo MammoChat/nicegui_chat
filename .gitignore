@@ -62,3 +62,6 @@ docker-compose*.yml
 deploy_on_nas.sh
 add_nas_alias.sh
 mammochat*.tar.gz
+
+# Deployment scripts
+scripts/
