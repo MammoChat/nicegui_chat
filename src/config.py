@@ -185,6 +185,7 @@ class AppConfig:
     heysol: HeysolConfig
     prompts: PromptStore
     ui: UIConfig
+    scene: dict[str, Any] = field(default_factory=dict)
 
 
 def load_app_config() -> AppConfig:
@@ -261,6 +262,15 @@ def load_app_config() -> AppConfig:
     ui_section = payload.get("ui", {})
     ui = UIConfig.from_payload(ui_section)
 
+    # Load scene.json for advanced styling (optional)
+    scene: dict[str, Any] = {}
+    scene_path = project_root / "config" / "scene.json"
+    if scene_path.exists():
+        try:
+            scene = json.loads(scene_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            print(f"Warning: Failed to load scene.json: {exc}")
+
     return AppConfig(
         app=app,
         chat=chat,
@@ -268,4 +278,5 @@ def load_app_config() -> AppConfig:
         heysol=heysol,
         prompts=prompt_store,
         ui=ui,
+        scene=scene,
     )
