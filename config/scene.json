@@ -170,8 +170,8 @@
     "container_wrapper": "w-full max-w-4xl mx-auto px-2 sm:px-4",
     "root_classes": "min-h-screen bg-gradient-to-br from-slate-50 to-pink-50 w-full",
     "chat_container_max_width": "900px",
-    "chat_padding_top": "6rem",
-    "chat_padding_bottom": "8rem",
+    "chat_padding_top": "5rem",
+    "chat_padding_bottom": "6rem",
     "chat_padding_x": "1.5rem"
   },
   "body": {
@@ -221,13 +221,25 @@
     "hipaa_badge": {
       "enabled": true,
       "text": "HIPAA Compliant",
+      "text_375": "HIPAA",
       "background": "linear-gradient(to right, #FCE4EC, #fda4af)",
       "border": "1px solid #FBCFE8",
       "color": "#BE185D",
       "font_size": "0.75rem",
       "font_weight": "500",
       "padding": "0.25rem 1rem",
-      "border_radius": "9999px"
+      "border_radius": "9999px",
+      "small_mobile": {
+        "max_width": "450px",
+        "background": "transparent",
+        "border": "none",
+        "padding": "0",
+        "font_size": "0.625rem"
+      },
+      "tiny_mobile": {
+        "max_width": "375px",
+        "text": "HIPAA"
+      }
     }
   },
   "footer": {
@@ -298,7 +310,7 @@
       "text": "Welcome to MammoChat™",
       "gradient_class": "gradient-text",
       "font_size": "1.75rem",
-      "font_weight": "400"
+      "font_weight": "700"
     },
     "welcome_content": {
       "color": "#212121",

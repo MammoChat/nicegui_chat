@@ -73,6 +73,10 @@ def setup_head_html(scene: Any) -> None:
                 animation: gradient-animation {scene.get("background", {}).get("animation_duration", "30s")} ease infinite;
             }}
 
+            .nicegui-content {{
+                height: 100dvh !important;
+            }}
+
             @keyframes gradient-animation {{
                 0%, 100% {{ background-position: 0% 50%; }}
                 50% {{ background-position: 100% 50%; }}
@@ -232,8 +236,15 @@ def setup_head_html(scene: Any) -> None:
                     padding-right: 0.5rem !important;
                 }}
                 .input-padding {{
+                    padding-top: 0.833rem !important;
+                    padding-bottom: 0.833rem !important;
                     padding-left: 0.75rem !important;
                     padding-right: 0.75rem !important;
+                }}
+                /* Header y-padding on mobile */
+                .header-row {{
+                    padding-top: 0.5rem !important;
+                    padding-bottom: 0.5rem !important;
                 }}
                 /* Hide checkmark icon on mobile */
                 .hipaa-badge-icon {{
@@ -264,30 +275,83 @@ def setup_head_html(scene: Any) -> None:
                 .welcome-card {{
                     padding: 2rem !important;
                 }}
+                /* Reduce welcome title font size on mobile */
+                .gradient-text {{
+                    font-size: 1.25rem !important;
+                }}
+                /* Hide accordion button on mobile */
+                .welcome-accordion-btn {{
+                    display: none !important;
+                }}
+            }}
+
+            /* Default: hide short text, show full text */
+            .hipaa-text-short {{
+                display: none;
+            }}
+            .hipaa-text-full {{
+                display: inline;
+            }}
+
+            /* Tablet - 600px and below */
+            @media (max-width: 600px) {{
+                /* Reduce welcome card horizontal padding by 50% (2.5rem -> 1.25rem) */
+                .welcome-card {{
+                    padding-left: 1.25rem !important;
+                    padding-right: 1.25rem !important;
+                }}
+                /* Reduce chat area container padding by 25% (1.5rem -> 1.125rem) */
+                .chat-padding {{
+                    padding-left: 1.125rem !important;
+                    padding-right: 1.125rem !important;
+                }}
+            }}
+
+            /* Medium mobile - 500px and below */
+            @media (max-width: 500px) {{
+                /* Override NiceGUI default padding */
+                :root {{
+                    --nicegui-default-padding: 1rem 0 !important;
+                }}
             }}
 
             /* Small mobile */
-            @media (max-width: 425px) {{
+            @media (max-width: 450px) {{
                 .chat-padding {{
                     padding-top: 2rem !important;
-                    padding-left: 0.25rem !important;
-                    padding-right: 0.25rem !important;
+                    padding-left: 1.25rem !important;
+                    padding-right: 1.25rem !important;
                 }}
                 .input-padding {{
                     padding-left: 0.25rem !important;
                     padding-right: 0.25rem !important;
+
                 }}
                 /* Make logo smaller on small mobile */
                 .header-logo {{
                     transform: scale(0.85) !important;
                 }}
-                /* Simplify HIPAA badge on small mobile */
+                /* Simplify HIPAA badge on small mobile - hide icon, text only */
                 .hipaa-badge {{
                     background: transparent !important;
                     border: none !important;
                     padding: 0 !important;
                     font-size: 0.625rem !important;
                     color: #BE185D !important;
+                }}
+                .hipaa-badge-icon {{
+                    display: none !important;
+                }}
+            }}
+
+            /* Tiny mobile - 375px and below */
+            @media (max-width: 375px) {{
+                /* Change HIPAA badge text from "HIPAA Compliant" to "Compliant" */
+                .hipaa-text-full {{
+                    display: none !important;
+                }}
+                .hipaa-text-short {{
+                    display: inline !important;
                 }}
             }}
         </style>
@@ -331,7 +395,7 @@ def create_header(scene: Any, dark: Any) -> Any:
 
     header = ui.header().style(header_style)
     with header:
-        with ui.row().classes("w-full items-center justify-between").style(
+        with ui.row().classes("w-full items-center justify-between header-row").style(
             f"max-width: {scene.get('header', {}).get('max_width', '1800px')}; "
             f"margin: 0 auto; padding: {scene.get('header', {}).get('padding', '0.75rem 2rem')};"
         ):
@@ -382,7 +446,8 @@ def create_header(scene: Any, dark: Any) -> Any:
                         <svg class="hipaa-badge-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        {hipaa_badge.get("text", "HIPAA Compliant")}
+                        <span class="hipaa-text-full">{hipaa_badge.get("text", "HIPAA Compliant")}</span>
+                        <span class="hipaa-text-short">{hipaa_badge.get("text_375", "Compliant")}</span>
                     </div>
                 ''', sanitize=False)
 
@@ -397,7 +462,7 @@ def create_chat_area(scene: Any, conversation: Any) -> tuple[Any, Any]:
     padding_x = scene.get("layout", {}).get("chat_padding_x", "1.5rem")
 
     with ui.column().classes("w-full chat-padding").style(
-        f"padding: {padding_top} {padding_x} {padding_bottom} {padding_x}; position: relative; z-index: 1; min-height: 100vh;"
+        f"padding: {padding_top} {padding_x} {padding_bottom} {padding_x}; position: relative; z-index: 1;"
     ):
         chat_container = ui.column().classes("w-full mx-auto gap-6").style(
             f"max-width: {scene.get('layout', {}).get('chat_container_max_width', '900px')};"
