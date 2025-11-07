@@ -62,7 +62,7 @@ def main() -> None:
         port=config.app.port,
         reload=config.app.reload,
         dark=True,
-        favicon="💗",
+        favicon="branding/icon.svg",
         show=True,  # Show the UI in browser
     )
 

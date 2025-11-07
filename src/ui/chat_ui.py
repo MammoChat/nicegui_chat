@@ -93,6 +93,10 @@ class ChatUI:
                     animation: gradient-animation 30s ease infinite;
                 }
 
+                .nicegui-content {
+                    height: 100dvh !important;
+                }
+
                 @keyframes gradient-animation {
                     0%, 100% { background-position: 0% 50%; }
                     50% { background-position: 100% 50%; }
@@ -236,8 +240,23 @@ class ChatUI:
                         padding-right: 0.75rem !important;
                     }
                     .input-padding {
+                        padding-top: 0.833rem !important;
+                        padding-bottom: 0.833rem !important;
                         padding-left: 0.75rem !important;
                         padding-right: 0.75rem !important;
+                    }
+                    /* Header y-padding on mobile */
+                    .header-row {
+                        padding-top: 0.5rem !important;
+                        padding-bottom: 0.5rem !important;
+                    }
+                    /* Reduce welcome title font size on mobile */
+                    .gradient-text {
+                        font-size: 1.25rem !important;
+                    }
+                    /* Hide accordion button on mobile */
+                    .welcome-accordion-btn {
+                        display: none !important;
                     }
                 }
 
@@ -247,13 +266,73 @@ class ChatUI:
                         padding-right: 0 !important;
                     }
                     .input-padding {
-                        padding-left: 0.25rem !important;
-                        padding-right: 0.25rem !important;
+                        padding-left: 0.75rem !important;
+                        padding-right: 0.75rem !important;
                     }
                     /* Remove NiceGUI scroll area padding on mobile */
                     .q-scrollarea__content.absolute {
                         padding-left: 0 !important;
                         padding-right: 0 !important;
+                    }
+                }
+
+                /* Default: hide short text, show full text */
+                .hipaa-text-short {
+                    display: none;
+                }
+                .hipaa-text-full {
+                    display: inline;
+                }
+
+                /* Tablet - 600px and below */
+                @media (max-width: 600px) {
+                    /* Reduce welcome card horizontal padding by 50% (2.5rem -> 1.25rem) */
+                    .welcome-message-card {
+                        padding-left: 1.25rem !important;
+                        padding-right: 1.25rem !important;
+                    }
+                    /* Reduce chat area container padding by 25% (1.5rem -> 1.125rem) */
+                    .chat-container {
+                        padding-left: 1.125rem !important;
+                        padding-right: 1.125rem !important;
+                    }
+                }
+
+                /* Medium mobile - 500px and below */
+                @media (max-width: 500px) {
+                    /* Override NiceGUI default padding */
+                    :root {
+                        --nicegui-default-padding: 1rem 0 !important;
+                    }
+                }
+
+                /* Small mobile - 450px and below */
+                @media (max-width: 450px) {
+                    /* Simplify HIPAA badge - hide icon, text only */
+                    .hipaa-badge {
+                        background: transparent !important;
+                        border: none !important;
+                        padding: 0 !important;
+                        font-size: 0.625rem !important;
+                    }
+                    .hipaa-badge-icon {
+                        display: none !important;
+                    }
+                    /* Reduce chat area padding to 50% of original (2.5rem -> 1.25rem) */
+                    .chat-container {
+                        padding-left: 1.25rem !important;
+                        padding-right: 1.25rem !important;
+                    }
+                }
+
+                /* Tiny mobile - 375px and below */
+                @media (max-width: 375px) {
+                    /* Change HIPAA badge text from "HIPAA Compliant" to "Compliant" */
+                    .hipaa-text-full {
+                        display: none !important;
+                    }
+                    .hipaa-text-short {
+                        display: inline !important;
                     }
                 }
             </style>
@@ -293,7 +372,7 @@ class ChatUI:
             logger.debug("Creating chat scroll area and container")
             with ui.scroll_area().classes("flex-grow w-full") as self.chat_scroll:
                 # Add padding container - extra top padding for fixed header and bottom for fixed input
-                with ui.column().classes("w-full chat-padding").style("padding: 6rem 1.5rem 8rem 1.5rem;"):
+                with ui.column().classes("w-full chat-padding chat-container").style("padding: 5rem 1.5rem 6rem 1.5rem; min-height: 100%;"):
                     self.chat_container = ui.column().classes("w-full mx-auto gap-6").style(
                         "max-width: 900px;"
                     )
@@ -334,14 +413,14 @@ class ChatUI:
                 '''
 
         with self.chat_container:
-            with ui.card().classes("message-enter").style(
+            with ui.card().classes("message-enter welcome-message-card").style(
                 "background: white; "
                 "border-radius: 1.5rem; padding: 2.5rem; border: 1px solid #FBCFE8; "
                 "box-shadow: 0 4px 12px rgba(233, 30, 99, 0.08); "
                 "width: 100%;"
             ):
                 # Header row with toggle button
-                with ui.row().classes("items-center gap-3 w-full").style("margin-bottom: 1.5rem; position: relative;"):
+                with ui.row().classes("items-center gap-3 w-full").style("margin-bottom: 1rem; position: relative;"):
                     # Chat bubble with heart icon only
                     ui.html('''
                         <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
@@ -367,7 +446,7 @@ class ChatUI:
                     ui.space()
 
                     # Toggle button with chevron SVG
-                    with ui.button(on_click=toggle_content).props("flat round").style(
+                    with ui.button(on_click=toggle_content).props("flat round").classes("welcome-accordion-btn").style(
                         "background: transparent; transition: transform 0.2s ease; padding: 0.5rem; min-width: 2.5rem; min-height: 2.5rem;"
                     ):
                         chevron_icon = ui.html('''
@@ -398,7 +477,7 @@ class ChatUI:
             "box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); "
             "margin: 0; padding: 0;"
         ):
-            with ui.row().classes("w-full items-center justify-between").style(
+            with ui.row().classes("w-full items-center justify-between header-row").style(
                 "max-width: 1800px; margin: 0 auto; padding: 0.75rem 2rem;"
             ):
                 with ui.row().classes("items-center gap-4"):
@@ -434,13 +513,14 @@ class ChatUI:
                 # HIPAA Compliant Badge on the right
                 logger.debug("Adding HIPAA badge to header")
                 ui.html('''
-                    <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.25rem 1rem;
+                    <div class="hipaa-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.25rem 1rem;
                                 border-radius: 9999px; background: linear-gradient(to right, #FCE4EC, #fda4af);
                                 border: 1px solid #FBCFE8; color: #BE185D; font-size: 0.75rem; font-weight: 500;">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="hipaa-badge-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        HIPAA Compliant
+                        <span class="hipaa-text-full">HIPAA Compliant</span>
+                        <span class="hipaa-text-short">HIPAA</span>
                     </div>
                 ''', sanitize=False)
         logger.debug("Header section completed")
@@ -666,11 +746,11 @@ class ChatUI:
                                 </div>
                             ''', sanitize=False)
                             with ui.card().props("flat").style(
-                                "background: linear-gradient(to right, lab(56.9303 76.8162 -8.07021) 0%, lab(56.101 79.4328 31.4532) 100%); "
-                                "border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 1.5rem 0.25rem 1.5rem 1.5rem; "
+                                "background: white; "
+                                "border: 1px solid #e5e7eb; border-radius: 0.25rem 1.5rem 1.5rem 1.5rem; "
                                 "padding: 1.25rem 1.75rem; box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2); max-width: 75%;"
                             ):
-                                assistant_label = ui.markdown("").style("color: white; font-weight: 300; line-height: 1.7; font-size: 1rem;")
+                                assistant_label = ui.markdown("").style("color: #212121; font-weight: 300; line-height: 1.7; font-size: 1rem;")
 
                 elif event.event_type == ChatEventType.MESSAGE_CHUNK:
                     chunk = event.payload.get("content", "")
